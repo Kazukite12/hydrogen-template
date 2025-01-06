@@ -3,6 +3,8 @@
 const express = require('express');
 require("dotenv").config();
 
+const serverless = require('serverless-http')
+
 const redis = require('redis')
 const { createAdapter } = require("@socket.io/redis-adapter");
 const app = express()
@@ -583,6 +585,9 @@ app.use("/api/mediaQuestion",mediaQuestionRouter)
 server.listen(3030,()=> {
     log.green('Server is Running')
 })
+
+
+module.exports.handler =serverless(app)
 
 
 

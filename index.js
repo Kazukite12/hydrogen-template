@@ -587,7 +587,7 @@ server.listen(3030,()=> {
 })
 
 
-module.exports.handler =serverless(app)
+export const handler = serverless(app);
 
 
 
